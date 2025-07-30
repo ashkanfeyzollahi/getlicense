@@ -32,6 +32,32 @@ options:
   --year YEAR           The year of the software's copyright
 ```
 
+## Features
+
+1. **License Retrieval:**
+
+  * Retrieves license templates by name (e.g., mit, gpl3).
+
+  * Lists available license templates from an online repository.
+
+2. **Customization:**
+
+  * Automatically fills in organization, project, and year fields in the license.
+
+  * Prompts for missing details interactively if not provided through command-line arguments.
+
+  * Allows setting a custom output file name with the --output option.
+
+3. **Caching:**
+
+  * Stores downloaded license templates locally for faster reuse.
+
+  * Can retrieve license templates in offline mode using cached versions.
+
+  * Supports skipping caching entirely with a command-line flag.
+
+  * Lists all locally cached license templates.
+
 ## Installation
 
 - You either install it from `pypi` using `pip`:
