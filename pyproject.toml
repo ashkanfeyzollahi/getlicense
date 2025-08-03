@@ -1,16 +1,13 @@
 [project]
 name = "getlicense"
-version = "0.1.0"
+version = "0.2.0"
 description = "A tool to quickly generate software license files with customizable project details"
 authors = [
-    {name = "ashkanfeyzollahi@gmail.com",email = "ashkanfeyzollahi@gmail.com"}
+    { name = "ashkanfeyzollahi@gmail.com", email = "ashkanfeyzollahi@gmail.com" },
 ]
 readme = "README.md"
 requires-python = ">=3.13"
-dependencies = [
-    "appdirs (>=1.4.4,<2.0.0)",
-    "requests (>=2.32.4,<3.0.0)"
-]
+dependencies = ["appdirs (>=1.4.4,<2.0.0)", "requests (>=2.32.4,<3.0.0)"]
 
 [project.scripts]
 getlicense = "getlicense:getlicense"
@@ -19,7 +16,7 @@ getlicense = "getlicense:getlicense"
 repository = "https://github.com/ashkanfeyzollahi/getlicense"
 
 [tool.poetry]
-packages = [{include = "getlicense.py", from = "src"}]
+packages = [{ include = "getlicense.py", from = "src" }]
 
 [tool.poetry.group.dev.dependencies]
 ruff = "^0.12.5"
