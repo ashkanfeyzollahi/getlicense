@@ -1,6 +1,6 @@
 # GetLicense
 
-<p align="center"><em>📖 Easily choose and get a license for your software</em>
+<p align="center"><em>📖 A tool to quickly generate software license files with customizable project details</em>
     <br>
     <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/ashkanfeyzollahi/getlicense">
     <img alt="GitHub License" src="https://img.shields.io/github/license/ashkanfeyzollahi/getlicense">
@@ -15,7 +15,7 @@ usage: getlicense [-h] [-L] [-l] [-n] [-c]
                   [--project PROJECT] [--year YEAR]
                   [license_name]
 
-Easily choose and get a license for your software
+A tool to quickly generate software license files with customizable project details
 
 positional arguments:
   license_name          Name of license template to fetch (e.g.,
