@@ -1,5 +1,5 @@
 """
-Easily choose and get a license for your software
+A tool to quickly generate software license files with customizable project details
 """
 
 import appdirs
@@ -75,7 +75,7 @@ argparser.add_argument(
 
 def getlicense() -> None:
     """
-    Easily choose and get a license for your software
+    A tool to quickly generate software license files with customizable project details
     """
 
     args = argparser.parse_args()
