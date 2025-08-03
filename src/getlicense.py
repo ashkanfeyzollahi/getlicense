@@ -20,7 +20,7 @@ DEFAULT_COPYRIGHT_YEAR = str(datetime.datetime.now().year)
 
 argparser = argparse.ArgumentParser(
     prog="getlicense",
-    description="Easily choose and get a license for your software",
+    description="A tool to quickly generate software license files with customizable project details",
 )
 
 argparser.add_argument(
@@ -119,13 +119,14 @@ def getlicense() -> None:
     if args.offline:
         if not os.path.isfile(path_to_cache_file):
             print(f"Couldn't find the {license_name!r} license template! (offline)")
-            return
+            args.offline = False
 
-        with open(path_to_cache_file) as cache_file:
-            content_to_write = cache_file.read()
-        print(f"Got the {license_name!r} license template!")
+        if args.offline:
+            with open(path_to_cache_file) as cache_file:
+                content_to_write = cache_file.read()
+            print(f"Got the {license_name!r} license template!")
 
-    else:
+    if not args.offline:
         getlicense_request = requests.get(
             f"https://raw.githubusercontent.com/licenses/license-templates/master/templates/{license_name}.txt"
         )
