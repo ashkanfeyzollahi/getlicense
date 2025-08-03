@@ -1,7 +1,7 @@
 [project]
 name = "getlicense"
 version = "0.1.0"
-description = "Easily choose a license for your software and *license it*"
+description = "A tool to quickly generate software license files with customizable project details"
 authors = [
     {name = "ashkanfeyzollahi@gmail.com",email = "ashkanfeyzollahi@gmail.com"}
 ]
