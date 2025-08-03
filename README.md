@@ -49,16 +49,23 @@ options:
 
 ## Installation
 
-- You either install it from `pypi` using `pip`:
+- You can install it from `pypi` using `pip` (for Microsoft Windows):
 
 ```bash
 pip install getlicense
 ```
 
-- Or directly install it from `github` using `pip`:
+- Or install it using `pipx` (recommended, for all):
 
 ```bash
-pip install git+https://github.com/ashkanfeyzollahi/getlicense.git
+pipx install getlicense 
 ```
 
 - Or even build it from source!
+
+```
+git clone https://github.com/ashkanfeyzollahi/getlicense.git
+cd getlicense
+python -m build
+pipx install dist/*
+```
