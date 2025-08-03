@@ -1,6 +1,13 @@
 # GetLicense
 
-<p align="center">📖 Easily choose and get a license for your software</p>
+<p align="center"><em>📖 Easily choose and get a license for your software</em>
+    <br>
+    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/ashkanfeyzollahi/getlicense">
+    <img alt="GitHub License" src="https://img.shields.io/github/license/ashkanfeyzollahi/getlicense">
+    <img alt="PyPI - Version" src="https://img.shields.io/pypi/v/getlicense">
+</p>
+
+**getlicense** is a command-line tool that helps you easily choose and generate a license for your software project. It fetches license templates from an online repository, fills in basic project information (like organization name, project name, and copyright year), and saves the result as a LICENSE file. You can also cache templates for offline use and list available options directly from the terminal.
 
 ```
 usage: getlicense [-h] [-L] [-l] [-n] [-c]
@@ -34,23 +41,11 @@ options:
 
 ## Features
 
-1. **License Retrieval:**
-
-   * Retrieves license templates by name (e.g., mit, gpl3).
-   * Lists available license templates from an online repository.
-
-2. **Customization:**
-
-   * Automatically fills in organization, project, and year fields in the license.
-   * Prompts for missing details interactively if not provided through command-line arguments.
-   * Allows setting a custom output file name with the --output option.
-
-3. **Caching:**
-
-   * Stores downloaded license templates locally for faster reuse.
-   * Can retrieve license templates in offline mode using cached versions.
-   * Supports skipping caching entirely with a command-line flag.
-   * Lists all locally cached license templates.
+* Automatically fills in organization, project name, and year
+* Caches license templates for offline use
+* Can list available and cached license templates
+* Customizable output location for the license file
+* Interactive prompts with smart defaults
 
 ## Installation
 
