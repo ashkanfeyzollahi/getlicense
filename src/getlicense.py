@@ -12,7 +12,7 @@ import sys
 import requests
 
 
-CACHE_DIR = appdirs.user_cache_dir("licenseit")
+CACHE_DIR = appdirs.user_cache_dir("getlicense")
 DEFAULT_ORGANIZATION_NAME = str(pathlib.Path("~").expanduser().name)
 DEFAULT_PROJECT_NAME = str(pathlib.Path(os.getcwd()).name)
 DEFAULT_COPYRIGHT_YEAR = str(datetime.datetime.now().year)
