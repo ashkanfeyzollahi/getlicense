@@ -13,11 +13,7 @@
 
 ## Installation
 
-1. **Install Pipx** (if you don't have it already):
-
-```bash
-pip install pipx
-```
+1. **[Install Pip](https://gist.github.com/ashkanfeyzollahi/7bbf36fb876a3781efbbb3ef841b5f4e)x** (if you don't have it already)
 
 2. **Install `getlicense` using Pipx**:
 
