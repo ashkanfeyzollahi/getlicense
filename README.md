@@ -1,5 +1,7 @@
 # GetLicense
 
+![screenshot](./screenshot.png)
+
 <p align="center"><em>📖 A tool to quickly generate software license files with customizable project details</em>
     <br>
     <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/ashkanfeyzollahi/getlicense">
