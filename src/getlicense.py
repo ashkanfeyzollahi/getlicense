@@ -13,7 +13,7 @@ import requests
 
 
 CACHE_DIR = appdirs.user_cache_dir("getlicense")
-DEFAULT_ORGANIZATION_NAME = str(pathlib.Path("~").expanduser().name)
+DEFAULT_COPYRIGHT_HOLDER_NAME = str(pathlib.Path("~").expanduser().name)
 DEFAULT_PROJECT_NAME = str(pathlib.Path(os.getcwd()).name)
 DEFAULT_COPYRIGHT_YEAR = str(datetime.datetime.now().year)
 
@@ -28,6 +28,10 @@ argparser.add_argument(
     nargs="?",
     default=None,
     help="Name of license template to fetch (e.g., mit, gpl3 and etc.)",
+)
+argparser.add_argument(
+    "--individual",
+    help="The name of the individual who holds the copyright to the software",
 )
 argparser.add_argument(
     "-L",
@@ -55,7 +59,7 @@ argparser.add_argument(
 )
 argparser.add_argument(
     "--organization",
-    help="The name of the organization or individual who holds the copyright to the software",
+    help="The name of the organization that holds the copyright to the software",
 )
 argparser.add_argument(
     "-o",
@@ -150,16 +154,16 @@ def getlicense() -> None:
 
     did_output_file_exist = os.path.exists(args.output)
 
-    organization = args.organization
-    if not organization:
-        organization = input(
-            f"Who holds the copyright to the software? ({DEFAULT_ORGANIZATION_NAME}) "
+    copyright_holder = args.organization or args.individual
+    if not copyright_holder:
+        copyright_holder = input(
+            f"Who holds the copyright to the software? ({DEFAULT_COPYRIGHT_HOLDER_NAME}) "
         )
-        organization = (
-            organization if organization.strip() else DEFAULT_ORGANIZATION_NAME
+        copyright_holder = (
+            copyright_holder if copyright_holder.strip() else DEFAULT_COPYRIGHT_HOLDER_NAME
         )
 
-    content_to_write = content_to_write.replace("{{ organization }}", organization)
+    content_to_write = content_to_write.replace("{{ organization }}", copyright_holder)
 
     project = args.project
     if not project:
