@@ -2,18 +2,42 @@
 A tool to quickly generate software license files with customizable project details
 """
 
-import appdirs
 import argparse
 import datetime
 import os
 import pathlib
+import subprocess
 import sys
 
+import appdirs
 import requests
 
 
 CACHE_DIR = appdirs.user_cache_dir("getlicense")
-DEFAULT_COPYRIGHT_HOLDER_NAME = str(pathlib.Path("~").expanduser().name)
+
+user_name = subprocess.run(
+    ["git", "config", "get", "user.name"],
+    capture_output=True,
+    text=True,
+    check=True
+)
+user_email = subprocess.run(
+    ["git", "config", "get", "user.email"],
+    capture_output=True,
+    text=True,
+    check=True
+)
+
+if user_name.returncode == 0 and user_email.returncode == 0:
+    user_name = user_name.stdout.strip()
+    user_email = user_email.stdout.strip()
+
+user = str(pathlib.Path("~").expanduser().name)
+
+if isinstance(user_name, str) and isinstance(user_email, str):
+    user = f"{user_name} <{user_email}>"
+
+DEFAULT_COPYRIGHT_HOLDER_NAME = user
 DEFAULT_PROJECT_NAME = str(pathlib.Path(os.getcwd()).name)
 DEFAULT_COPYRIGHT_YEAR = str(datetime.datetime.now().year)
 
