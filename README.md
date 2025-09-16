@@ -7,6 +7,7 @@
     <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/ashkanfeyzollahi/getlicense">
     <img alt="GitHub License" src="https://img.shields.io/github/license/ashkanfeyzollahi/getlicense">
     <img alt="PyPI - Version" src="https://img.shields.io/pypi/v/getlicense">
+    <img alt="PyPI - Downloads" src="https://img.shields.io/pypi/dm/getlicense">
 </p>
 
 **getlicense** is a command-line tool that helps you easily choose and generate a license for your software project. It fetches license templates from an online repository, fills in basic project information (like organization name, project name, and copyright year), and saves the result as a LICENSE file. You can also cache templates for offline use and list available options directly from the terminal.
